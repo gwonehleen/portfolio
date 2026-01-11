@@ -1,0 +1,290 @@
+/* =====================================================
+   GLOBAL RESET
+   ===================================================== */
+
+   * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Lato, sans-serif;
+}
+
+/* =====================================================
+   BASE STYLES
+   ===================================================== */
+
+body {
+    background: #f5f6f8;
+    color: #222;
+    line-height: 1.6;
+}
+
+/* =====================================================
+   LINKS (CONSISTENT ACROSS ALL PAGES)
+   ===================================================== */
+
+a,
+a:visited {
+    color: #0b3c5d;            /* same color everywhere */
+    text-decoration: none;     /* no underline by default */
+    font-weight: bold;
+    transition: text-decoration 0.2s ease;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* =====================================================
+   HEADER & NAV
+   ===================================================== */
+
+header {
+    text-align: center;
+    align-items: center;  
+    justify-content: center; 
+    padding: 3rem 1rem;
+    height: 165px;
+    background: #95b1de;
+    border-bottom: 3px solid #2c3542;
+}
+
+header h1 {
+    font-size: 2.7rem;
+}
+
+header p {
+    margin-top: 0.5rem;
+    color: #555;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1rem;
+    background: #748bb0;
+    border-bottom: 3px solid #2c3542;
+}
+
+nav a,
+nav a:visited {
+    color: #0b3c5d;            /* force nav consistency */
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Optional: highlight active page */
+/*
+nav a.active {
+    text-decoration: underline;
+}
+*/
+
+/* =====================================================
+   PAGE SECTIONS
+   ===================================================== */
+
+section {
+    max-width: 1100px;
+    margin: 3rem auto;
+    padding: 0 1.5rem;
+}
+
+.about p {
+    max-width: 700px;
+}
+
+/* =====================================================
+   PROJECTS PAGE (GRID VIEW)
+   ===================================================== */
+
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background: white;
+    border-radius: 14px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    overflow: hidden;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 30px rgba(0,0,0,0.12);
+}
+
+/* Portfolio image sizing */
+.project-card img {
+    width: 100%;
+    height: 230px;
+    object-fit: contain;     /* fits inside box, no cropping */
+    object-position: center; /* centers image inside box */
+    display: block;
+    background-color: white; /* optional: fill empty space with background */
+}
+
+.project-info {
+    padding: 0.75rem;
+    text-align: center;
+}
+
+/* =====================================================
+   PROJECT DETAIL PAGE
+   ===================================================== */
+
+.project-page {
+    max-width: 900px;
+    margin: auto;
+    padding: 3rem 1.5rem;
+}
+
+.project-hero {
+    width: 100%;
+    border-radius: 14px;
+    margin-bottom: 2rem;
+}
+
+.project-page h3 {
+    margin-top: 2rem;
+    margin-bottom: 0.4rem;
+}
+
+/* =====================================================
+   PROJECT GALLERY + DETAILS (CUSTOM PAGES)
+   ===================================================== */
+
+.project-gallery {
+    display: flex;
+    justify-content: center;    /* center the group horizontally */
+    align-items: center;        /* align vertical centers */
+    gap: 1rem;                  /* spacing between images */
+    margin: 2rem auto;
+    padding: 0 1rem;
+    max-width: 1000px;
+    flex-wrap: wrap;            /* optional: wrap on very small screens */
+}
+
+.project-gallery img {
+    display: block;
+    border-radius: 14px;
+    height: auto;               /* keep natural aspect ratio */
+    max-width: 30%;             /* limits the width so images are smaller */
+    min-width: 150px;           /* prevents them from shrinking too small */
+}
+
+.project-details {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+    gap: 1.5rem;
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.detail-box {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 14px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    
+    display: flex;
+    flex-direction: column;   /* vertical layout */
+    justify-content: flex-start;  /* aligns content to top */
+}
+
+/* =====================================================
+   FOOTER
+   ===================================================== */
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.what-list {
+    margin-top: 0.5rem;
+    margin-left: 1.2rem;
+}
+
+.what-list li {
+    margin-bottom: 0.4rem;
+    line-height: 1.6;
+}
+
+.project-section {
+    margin: 3rem auto;
+    padding: 0 1.5rem;
+    max-width: 1100px;
+}
+
+.project-section h2 {
+    text-align: left;
+    margin-bottom: 1.5rem;
+    color: #0b3c5d;
+}
+
+.company-logo {
+    width: 200px;           /* set your desired size */
+    max-width: 80%;         /* don’t overflow on small screens */
+}
+
+.project-gallery video.project-video {
+    border-radius: 14px;
+    max-width: 30%;       /* same as images */
+    min-width: 150px;
+    height: auto;          /* maintain aspect ratio */
+}
+
+.nav-subtext {
+    text-align: center;        /* center horizontally */
+    padding-top: 1rem;        /* space only above */
+    color: #555;               /* optional: lighter text */
+    font-style: italic;        /* optional styling */
+    font-size: 1.1rem;         /* slightly bigger for emphasis */
+}
+
+.about-section {
+    max-width: 900px;
+    margin: 3rem auto;
+    padding: 0 1.5rem;
+}
+
+.about-item {
+    display: flex;
+    align-items: center;       /* vertically center image & text */
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;           /* stack on smaller screens */
+}
+
+.about-img {
+    width: 150px;              /* adjust size */
+    height: 150px;             /* square image */
+    object-fit: cover;         /* crop if needed, keep aspect ratio */
+    border-radius: 5px;
+    flex-shrink: 0;            /* prevent image from shrinking too small */
+}
+
+.about-text {
+    flex: 1;                   /* text takes remaining space */
+}
+
+.about-text h3 {
+    margin-bottom: 0.5rem;
+    color: #0b3c5d;
+}
+
+.about-text p {
+    color: #333;
+    line-height: 1.6;
+}
